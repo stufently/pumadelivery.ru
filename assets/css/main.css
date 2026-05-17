@@ -3142,3 +3142,19 @@ input, select, textarea {
 				}
 
 	}
+/* Mobile tap-target compliance (Yandex/Google: min 48x48px) */
+@media (max-width: 736px) {
+	a, button, input[type="button"], input[type="submit"], .button, .goto-next, .scrolly {
+		min-height: 48px;
+		min-width: 48px;
+	}
+	.button, a.button, input[type="button"], input[type="submit"], button {
+		padding: 0.85em 1.5em;
+		line-height: 48px;
+	}
+	#header nav a, #footer nav a {
+		padding: 12px 16px;
+		display: inline-block;
+		min-height: 48px;
+	}
+}
