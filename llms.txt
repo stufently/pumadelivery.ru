@@ -1,0 +1,30 @@
+# Puma Delivery
+
+> Русскоязычная курьерская служба в Таиланде (с 2019 года, основатель Дмитрий Колесников).
+> Доставка товаров, посылок и поручений в Бангкоке, Паттайе, Пхукете, Самуи и Пангане, а также
+> передача небольших посылок и документов между Таиландом и Россией через пилотов/стюардесс.
+
+## Города и услуги
+- [Главная](https://pumadelivery.ru/): обзор услуг, зона покрытия (5 городов), оплата, FAQ.
+- [Бангкок](https://pumadelivery.ru/bangkok.html): курьерская доставка по Бангкоку — посылки, товары с Lazada/Shopee, документы, поручения.
+- [Паттайя](https://pumadelivery.ru/pattaya.html): доставка по Паттайе, Джомтьену и Наклуа.
+- [Пхукет](https://pumadelivery.ru/phuket.html): доставка по всему острову Пхукет (Патонг, Карон, Ката, Раваи, Чалонг, Камала, Сурин, Банг Тао).
+- [Самуи](https://pumadelivery.ru/samui.html): доставка по острову Самуи (Чавенг, Ламай, Бо Пхут, Маенам, Натхон).
+- [Панган](https://pumadelivery.ru/phangan.html): доставка по Ко Пангану (Тонг Сала, Хад Рин, Шри Тану, Чалоклам, Бан Тай).
+- [О нас](https://pumadelivery.ru/about.html): история компании, основатель Дмитрий Колесников, принципы работы.
+- [Отзывы](https://pumadelivery.ru/reviews.html): отзывы клиентов о курьерской службе.
+
+## Блог
+- [Блог — индекс](https://pumadelivery.ru/blog/): статьи о жизни и доставке в Таиланде.
+- [Что нельзя ввозить в Таиланд](https://pumadelivery.ru/blog/chto-nelzya-vvozit-v-tailand.html): таможенные правила, лимиты и штрафы 2026.
+- [Как заказать с Lazada в Таиланде](https://pumadelivery.ru/blog/kak-zakazat-s-lazada-v-tailande.html): регистрация, оплата, пункты выдачи без местного адреса.
+- [Доставка алкоголя в Таиланде](https://pumadelivery.ru/blog/dostavka-alkogolya-v-tailande.html): часы продажи и правила 2026.
+- [Рецептурные лекарства туристу](https://pumadelivery.ru/blog/receptury-lekarstva-turistu.html): что купить без рецепта, аптеки с английским персоналом.
+- [Перевозка между городами Таиланда](https://pumadelivery.ru/blog/perevozka-mezhdu-gorodami-tailanda.html): паромы, самолёты, автобусы — сроки и удобство.
+- [Lazada vs Shopee](https://pumadelivery.ru/blog/lazada-vs-shopee.html): сравнение маркетплейсов для туриста.
+- [Тайская банковская карта 2026](https://pumadelivery.ru/blog/tajskaya-bankovskaya-karta-2026.html): какие банки открывают счета иностранцам, документы, визы.
+
+## Контакты
+- Email: pumainthailand.com@gmail.com
+- Telegram (основатель, Дмитрий): https://t.me/kolesnikov1988
+- VK: https://vk.com/pumainthailand
