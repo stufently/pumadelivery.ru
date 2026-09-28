@@ -27,11 +27,19 @@
 		  "@graph": [
 		    {
 		      "@type": "Service",
+		      "@id": "https://pumadelivery.ru/samui.html#service",
 		      "name": "Доставка по Самуи",
 		      "description": "Курьерская доставка товаров, посылок и поручений по острову Ко Самуи.",
-		      "provider": {"@type": "LocalBusiness", "name": "Puma Delivery", "url": "https://pumadelivery.ru/"},
+		      "provider": {"@id": "https://pumadelivery.ru/#business"},
 		      "areaServed": {"@type": "City", "name": "Самуи"},
 		      "serviceType": "Courier delivery"
+		    },
+		    {
+		      "@type": "BreadcrumbList",
+		      "itemListElement": [
+		        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://pumadelivery.ru/"},
+		        {"@type": "ListItem", "position": 2, "name": "Доставка по Самуи", "item": "https://pumadelivery.ru/samui.html"}
+		      ]
 		    },
 		    {
 		      "@type": "FAQPage",

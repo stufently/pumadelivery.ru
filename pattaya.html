@@ -27,11 +27,19 @@
 		  "@graph": [
 		    {
 		      "@type": "Service",
+		      "@id": "https://pumadelivery.ru/pattaya.html#service",
 		      "name": "Доставка по Паттайе",
 		      "description": "Курьерская доставка товаров, документов и поручений по Паттайе, Джомтьену и Наклуа.",
-		      "provider": {"@type": "LocalBusiness", "name": "Puma Delivery", "url": "https://pumadelivery.ru/"},
+		      "provider": {"@id": "https://pumadelivery.ru/#business"},
 		      "areaServed": {"@type": "City", "name": "Паттайя"},
 		      "serviceType": "Courier delivery"
+		    },
+		    {
+		      "@type": "BreadcrumbList",
+		      "itemListElement": [
+		        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://pumadelivery.ru/"},
+		        {"@type": "ListItem", "position": 2, "name": "Доставка по Паттайе", "item": "https://pumadelivery.ru/pattaya.html"}
+		      ]
 		    },
 		    {
 		      "@type": "FAQPage",

@@ -27,11 +27,19 @@
 		  "@graph": [
 		    {
 		      "@type": "Service",
+		      "@id": "https://pumadelivery.ru/phuket.html#service",
 		      "name": "Доставка по Пхукету",
 		      "description": "Курьерская доставка товаров, посылок и поручений по всему острову Пхукет.",
-		      "provider": {"@type": "LocalBusiness", "name": "Puma Delivery", "url": "https://pumadelivery.ru/"},
+		      "provider": {"@id": "https://pumadelivery.ru/#business"},
 		      "areaServed": {"@type": "City", "name": "Пхукет"},
 		      "serviceType": "Courier delivery"
+		    },
+		    {
+		      "@type": "BreadcrumbList",
+		      "itemListElement": [
+		        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://pumadelivery.ru/"},
+		        {"@type": "ListItem", "position": 2, "name": "Доставка по Пхукету", "item": "https://pumadelivery.ru/phuket.html"}
+		      ]
 		    },
 		    {
 		      "@type": "FAQPage",

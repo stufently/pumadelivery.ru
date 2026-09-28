@@ -27,11 +27,19 @@
 		  "@graph": [
 		    {
 		      "@type": "Service",
+		      "@id": "https://pumadelivery.ru/phangan.html#service",
 		      "name": "Доставка по Пангану",
 		      "description": "Курьерская доставка товаров, посылок и поручений по острову Ко Панган.",
-		      "provider": {"@type": "LocalBusiness", "name": "Puma Delivery", "url": "https://pumadelivery.ru/"},
+		      "provider": {"@id": "https://pumadelivery.ru/#business"},
 		      "areaServed": {"@type": "City", "name": "Панган"},
 		      "serviceType": "Courier delivery"
+		    },
+		    {
+		      "@type": "BreadcrumbList",
+		      "itemListElement": [
+		        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://pumadelivery.ru/"},
+		        {"@type": "ListItem", "position": 2, "name": "Доставка по Пангану", "item": "https://pumadelivery.ru/phangan.html"}
+		      ]
 		    },
 		    {
 		      "@type": "FAQPage",

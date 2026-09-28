@@ -27,11 +27,19 @@
 		  "@graph": [
 		    {
 		      "@type": "Service",
+		      "@id": "https://pumadelivery.ru/bangkok.html#service",
 		      "name": "Доставка по Бангкоку",
 		      "description": "Курьерская доставка товаров, документов и поручений по всем районам Бангкока.",
-		      "provider": {"@type": "LocalBusiness", "name": "Puma Delivery", "url": "https://pumadelivery.ru/"},
+		      "provider": {"@id": "https://pumadelivery.ru/#business"},
 		      "areaServed": {"@type": "City", "name": "Бангкок"},
 		      "serviceType": "Courier delivery"
+		    },
+		    {
+		      "@type": "BreadcrumbList",
+		      "itemListElement": [
+		        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://pumadelivery.ru/"},
+		        {"@type": "ListItem", "position": 2, "name": "Доставка по Бангкоку", "item": "https://pumadelivery.ru/bangkok.html"}
+		      ]
 		    },
 		    {
 		      "@type": "FAQPage",

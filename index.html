@@ -41,6 +41,7 @@
 		    {
 		      "@type": "LocalBusiness",
 		      "@id": "https://pumadelivery.ru/#business",
+		      "parentOrganization": {"@id": "https://pumadelivery.ru/#org"},
 		      "name": "Puma Delivery",
 		      "description": "Курьерская доставка по Таиланду и из Таиланда в Россию: товары, посылки, поручения. С 2019 года.",
 		      "url": "https://pumadelivery.ru/",
@@ -76,6 +77,19 @@
 		          "areaServed": "TH"
 		        }
 		      ]
+		    },
+		    {
+		      "@type": "Service",
+		      "@id": "https://pumadelivery.ru/#service-russia-thailand",
+		      "name": "Передачи Россия — Таиланд через пилотов и стюардесс",
+		      "description": "Передаём небольшие личные посылки, документы и лекарства между Россией и Таиландом в обе стороны через пилотов и стюардесс. По Таиланду организуем курьерскую доставку.",
+		      "provider": {"@id": "https://pumadelivery.ru/#business"},
+		      "areaServed": [
+		        {"@type": "Country", "name": "Россия"},
+		        {"@type": "Country", "name": "Таиланд"}
+		      ],
+		      "serviceType": "Передача посылок и документов",
+		      "url": "https://pumadelivery.ru/#russia"
 		    },
 		    {
 		      "@type": "FAQPage",
