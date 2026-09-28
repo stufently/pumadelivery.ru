@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /googled7273fa657395235.html
 Disallow: /yandex_0f75ccd0b67f0ac1.html
+Disallow: /docs/
 
 Sitemap: https://pumadelivery.ru/sitemap.xml
