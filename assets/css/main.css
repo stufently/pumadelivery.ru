@@ -3026,6 +3026,16 @@ input, select, textarea {
 					display: none;
 				}
 
+			body.is-article #header {
+				height: auto;
+				padding: 3em 1.5em;
+			}
+
+			body.is-article #header:after {
+				height: auto;
+				display: none;
+			}
+
 		/* Footer */
 
 			#footer .container {
