@@ -2,7 +2,7 @@
 
 - **Репозиторий:** `~/github/pumadelivery.ru` (GitHub Pages, статичный HTML, без сборки).
 - **Дата постановки:** 2026-09-28.
-- **BASE_SHA:** `94ed0833d09c5a45e28ba0d3d60bc4fd6b54f4cc`
+- **BASE_SHA:** `94ed08399541886e3b6699fc3fe3bd607861986a`
   (коммит «Fix three review findings in articles»; следующий за ним коммит
   постановщика добавляет эту спеку и чекер `docs/specs/check_m3.py`).
 - **Исполнитель:** Codex (`cx`) — выбор владельца («исправь все находки аудита
@@ -153,8 +153,8 @@ Co-Authored-By). Разрешённые пути от BASE_SHA: `index.html`, п
 
 - **AC-001 — все правки аудита на месте.** Команда: `bash -c 'python3 docs/specs/check_m3.py'`
 - **AC-002 — статьи по-прежнему проходят чекер статей.** Команда: `bash -c 'python3 docs/specs/check_articles.py --group all'`
-- **AC-003 — чекеры и пакет фактов не изменены.** Команда: `bash -c 'test -z "$(git diff --name-only 94ed0833d09c5a45e28ba0d3d60bc4fd6b54f4cc HEAD -- docs/specs/check_articles.py docs/specs/facts-delivery-demand.md)" && test "$(git log --format=%H -- docs/specs/check_m3.py | wc -l)" = 1'`
-- **AC-004 — изменения только в разрешённых путях.** Команда: `bash -c 'd=$(git diff --name-only 94ed0833d09c5a45e28ba0d3d60bc4fd6b54f4cc..HEAD) || exit 1; test -n "$d" || exit 1; bad=$(printf "%s\n" "$d" | grep -vxE "index\.html|(bangkok|pattaya|phuket|samui|phangan)\.html|reviews\.html|sitemap\.xml|blog/[a-z0-9-]+\.html|docs/specs/M3-seo-geo-fixes\.md|docs/specs/check_m3\.py" | grep -vx "blog/index.html"); inx=$(printf "%s\n" "$d" | grep -x "blog/index.html"); echo "outside: $bad $inx"; test -z "$bad$inx"'`
+- **AC-003 — чекеры и пакет фактов не изменены.** Команда: `bash -c 'd=$(git diff --name-only 94ed08399541886e3b6699fc3fe3bd607861986a HEAD -- docs/specs/check_articles.py docs/specs/facts-delivery-demand.md) || exit 1; test -z "$d" && test "$(git log --format=%H -- docs/specs/check_m3.py | wc -l)" = 1'`
+- **AC-004 — изменения только в разрешённых путях.** Команда: `bash -c 'd=$(git diff --name-only 94ed08399541886e3b6699fc3fe3bd607861986a..HEAD) || exit 1; test -n "$d" || exit 1; bad=$(printf "%s\n" "$d" | grep -vxE "index\.html|(bangkok|pattaya|phuket|samui|phangan)\.html|reviews\.html|sitemap\.xml|blog/[a-z0-9-]+\.html|docs/specs/M3-seo-geo-fixes\.md|docs/specs/check_m3\.py" | grep -vx "blog/index.html"); inx=$(printf "%s\n" "$d" | grep -x "blog/index.html"); echo "outside: $bad $inx"; test -z "$bad$inx"'`
 - **AC-005 — рабочее дерево чистое.** Команда: `bash -c 'test -z "$(git status --porcelain --untracked-files=all -- . ":(exclude)report.json" ":(exclude)report-blocked.md" ":(exclude)docs/specs/__pycache__")"'`
 
 Критериев: 5. Работу доказывает AC-001 (до работы красный). AC-002…AC-005 —
