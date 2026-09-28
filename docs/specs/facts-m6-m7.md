@@ -1,0 +1,26 @@
+# Дополнение к пакету фактов для вех M6/M7 (расширение статей)
+
+Основной пакет — `docs/specs/facts-delivery-demand.md` (не менять). Здесь —
+то, что постановщик проверил 2026-09-28 дополнительно. Других цифр, цен,
+сроков, историй клиентов и статистики в статьях НЕ появляться.
+
+## Первоисточники для ссылок (только эти, дословные URL)
+
+| Для чего | URL | Что там сказано (проверено) |
+|---|---|---|
+| Ввоз в Таиланд, пассажир | `https://www.customs.go.th/list_strc_simple_neted.php?ini_content=individual_160503_03_160905_01&lang=en&left_menu=menu_individual_submenu_01_160421_01` | Без пошлины через «зелёный» коридор: личные вещи в разумном количестве общей стоимостью не больше 20 000 бат, если это не запрещённые/ограниченные товары и не еда; не больше 200 сигарет или 250 г табака; не больше 1 литра алкоголя |
+| Лекарства в Таиланд | `https://en.fda.moph.go.th/import-inspection-service/category/guideline-of-importation-for-personal-use-01` | Личный ввоз лекарств — не больше чем на 30 дней; еда для личного пользования — до 10 кг (10 л) |
+| Контролируемые лекарства в Таиланд | `https://en.fda.moph.go.th/entrepreneurs-narcotic-drugs-and-psychotropic-substances/category/guidance-for-travelers-under-treatment-carrying-personal-medications-containing-narcotic-drugs-into-/` | Препараты с наркотическими/психотропными веществами — только с разрешением Thai FDA; послабление не для почтовых отправлений |
+| Ввоз в Россию, нормы | `https://customs.gov.ru/fiz/pravila-peremeshheniya-tovarov/stoimostnye,-vesovye-i-%28ili%29-kolichestvennye-normy,-v-predelax-kotoryx-tovary-dlya-lichnogo-pol-zovaniya-vvozyatsya-na-tamozhennuyu-territoriyu-evrazijskogo-ekonomicheskogo-soyuza-bez-uplaty-tamozhennyx-poshlin,-nalogov` | Страница ФТС «Нормы ввоза товаров для личного пользования»: воздушным транспортом в сопровождаемом багаже — до 10 000 евро и до 50 кг; иным транспортом — 500 евро и 25 кг. (Найдено поиском 2026-09-28; сама страница с хоста постановщика не открылась по таймауту — цифры совпадают с пакетом фактов §4.) |
+| Лекарства в Россию | `https://customs.gov.ru/fiz/pravila-peremeshheniya-tovarov/lekarstvennye-sredstva` | как в пакете фактов §4 |
+| Фрукты в Россию | `https://eec.eaeunion.org/upload/medialibrary/541/Reshenie-Soveta-Komissii-ot-30.11.2016-_-157.pdf` | до 5 кг подкарантинной продукции в багаже без фитосанитарного сертификата |
+| Что не пересылает Почта России | `https://info.pochta.ru/support/post-rules/prohibited-for-delivery` | как в пакете фактов §4 |
+| Батареи у пассажира | `https://www.iata.org/en/programs/cargo/dangerous-goods/dgr-guidance-passengers/` | запасные литиевые батареи и пауэрбанки — только в ручной клади |
+
+## Как применять
+
+- Таблица в статье — только правила и лимиты из этого файла и из
+  `facts-delivery-demand.md` плюс «как мы помогаем» (описание услуги из §1
+  пакета фактов). Колонка «Источник» — название ведомства, ссылкой по URL выше.
+- Цифры, отмеченные в пакете фактов как «предположение», в таблицу не ставить.
+- Цен в рублях/батах за услугу нет — стоимость «обсуждаем индивидуально».
