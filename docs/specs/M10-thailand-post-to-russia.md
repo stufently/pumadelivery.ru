@@ -3,8 +3,8 @@
 - **Репозиторий:** `~/github/pumadelivery.ru` (статичный HTML, GitHub Pages, без сборки).
 - **Дата постановки:** 2026-10-04.
 - **BASE_SHA:** `05e93df4e7424b8a21f0e7f9d1b83b97b1c2f64e`
-  (коммит «Add cheap-delivery blocks and Kerry to titles»; следующий коммит
-  постановщика добавляет эту спеку `docs/specs/M10-thailand-post-to-russia.md`,
+  (коммит «Add cheap-delivery blocks and Kerry to titles»; два следующих коммита
+  постановщика добавляют и правят по ревью эту спеку `docs/specs/M10-thailand-post-to-russia.md`,
   чекер `docs/specs/check_m10.py` и пакет фактов `docs/specs/facts-m10.md`).
 - **Исполнитель:** Codex (`cx`).
 
@@ -35,7 +35,7 @@
   ссылки на Telegram, `/blog/`, ≥2 города, старую статью блога, картинка с
   alt/width/height/lazy, баланс тегов, без дублей абзацев с другими статьями).
 - `Article`: `datePublished` и `dateModified` = `2026-10-04`, author/publisher
-  `@id` как в соседних статьях, `inLanguage` `ru-RU`; OG-картинка — `/images/og/customs.jpg`.
+  `@id` как в соседних статьях, `inLanguage` `ru-RU`; OG-картинка — `https://pumadelivery.ru/images/og/customs.jpg` (полный URL, как в соседних статьях).
 - Предположение (Вордстат не снимался): ключи «посылка из Таиланда в Россию»,
   «отправить посылку из Тайланда в Россию», «почта Таиланда в Россию», «EMS из
   Таиланда», «сколько стоит посылка из Таиланда в Россию».
@@ -49,17 +49,25 @@
   (= Article.headline, og:title, имя третьей крошки).
 - **h1:** `Если нужно очень дёшево из Таиланда в Россию: почта и EMS`.
 - Пиши «Таиланд»; допускается одно «из Тайланда» в тексте как пользовательское написание.
-- Вступление 40–85 слов с прямым ответом: самый дешёвый способ (ePacket до 2 кг),
-  от 2 кг — авиапосылка, EMS — быстрее и до 30 кг; срочное и ценное — к нам.
-- Таблица цен (`<thead>`, ≥6 строк) по §B: EMS World, авиапосылка, ePacket,
-  Small Packet по весам; подпись «цены на 4 октября 2026 года, калькулятор
-  Thailand Post» и ссылка на `https://www.thailandpost.co.th/`.
+- Вступление 40–85 слов с прямым ответом: до 2 кг самый дешёвый — Small Packet
+  без трека (460 бат за 0,5 кг), с треком — ePacket (535 бат за 0,5 кг); от 2 кг
+  дешевле авиапосылка; EMS — быстрее и до 30 кг; срочное и ценное — к нам.
+- Таблица цен — ровно по §B, в `<div class="table-wrapper"><table>` с `<thead>`;
+  столбцы в порядке: «Вес | EMS World | Авиапосылка | ePacket | Small Packet»;
+  в `<tbody>` 7 строк, первая ячейка дословно `0,5 кг`, `1 кг`, `2 кг`, `5 кг`,
+  `10 кг`, `20 кг`, `30 кг`; цены — числом как в пакете (`1 840`, обычный пробел,
+  без «бат» в ячейке); нет услуги или «не принимается» — ячейка `—` (длинное тире). Чекер сверяет
+  каждую ячейку (R10-RATES). Подпись «цены в батах на 4 октября 2026 года,
+  калькулятор Thailand Post» и ссылка на `https://www.thailandpost.co.th/`.
 - Вторая таблица: сравнение ePacket / авиапосылка / EMS World / передача с пилотом
   (максимальный вес, габариты, отслеживание, компенсация, где получать в России)
   — для нас без цен.
 - h2-вопросы (≥2): «Сколько стоит отправить посылку из Таиланда в Россию?»,
   «Сколько идёт посылка из Таиланда в Россию?», «Принимает ли почта Таиланда
   посылки в Россию?» — прямой ответ первым абзацем, формулировки строго по §A и §C.
+  Любой диапазон дней/недель («4–9 дней») пиши ТОЛЬКО в предложении, где есть
+  слово «Европа»/«Европы» (чекер ловит диапазон сроков без него во всём тексте,
+  включая FAQ); для России — «срок не нормирован».
 - Как отправить по шагам: отделение Thailand Post, паспорт, бланк (ป.256 / ป.180 /
   CN22-CN23 по §F), упаковка, что показать сотруднику, трек, отслеживание на
   `https://track.thailandpost.co.th/` и `https://www.pochta.ru/tracking`.
@@ -67,12 +75,16 @@
   `customs.gov.ru` (URL из «Ссылок» пакета).
 - Что не примут и что опасно слать почтой: §E + лекарства, фрукты — фразы-ссылки
   на `/blog/tajskie-lekarstva-v-rossiyu.html` и `/blog/frukty-iz-tailanda-v-rossiyu.html`.
-- Альтернативы по §G: DHL/FedEx/UPS приостановлены, CDEK Forward — только как в пакете.
+- Альтернативы по §G: DHL/FedEx/UPS приостановлены (можно со ссылками на
+  `https://www.dhl.com/`, `https://dhlexpress.ee/`, `https://www.fedex.com/`,
+  `https://www.ups.com/`), CDEK Forward — только как в пакете.
 - «Частые ошибки» (4–6 пунктов, h2 со словом «ошибки»).
 - Когда почта не подходит: срочно, документы, лекарства, ценное — передача через
   пилотов и стюардесс, Telegram; наши курьеры в городах (≥2 ссылки на страницы городов).
 - Ссылки на обе статьи M9: `/blog/pochta-rossii-i-ems-v-tailand.html` (обратное
   направление) и `/blog/mestnye-sluzhby-dostavki-v-tailande.html` (по Таиланду).
+- Ссылка на ≥1 старую статью блога из `OLD_ARTICLES` чекера `check_articles.py`
+  (например, `/blog/kak-zakazat-s-lazada-v-tailande.html` или `/blog/chto-nelzya-vvozit-v-tailand.html`).
 - FAQ 6–8 вопросов (JSON-LD = видимый текст дословно).
 
 ### Интеграция
@@ -108,7 +120,7 @@ Co-Authored-By). Разрешённые пути от BASE_SHA: новая ст�
 
 - **AC-001 — статья на месте и интегрирована.** Команда: `bash -c 'python3 docs/specs/check_m10.py'`
 - **AC-002 — прежние чекеры зелёные.** Команда: `bash -c 'python3 docs/specs/check_articles.py --group all && python3 docs/specs/check_m3.py && python3 docs/specs/check_m4.py && python3 docs/specs/check_m5.py && python3 docs/specs/check_m6.py --group ru-th && python3 docs/specs/check_m6.py --group th-ru && python3 docs/specs/check_m8.py && python3 docs/specs/check_m9.py'`
-- **AC-003 — чекеры и пакеты фактов не изменены.** Команда: `bash -c 'd=$(git diff --name-only 05e93df4e7424b8a21f0e7f9d1b83b97b1c2f64e..HEAD -- docs/specs/check_articles.py docs/specs/check_m3.py docs/specs/check_m4.py docs/specs/check_m5.py docs/specs/check_m6.py docs/specs/check_m8.py docs/specs/check_m9.py docs/specs/facts-m9.md) || exit 1; e=$(git log --format=%h 05e93df4e7424b8a21f0e7f9d1b83b97b1c2f64e..HEAD -- docs/specs/check_m10.py docs/specs/facts-m10.md | wc -l) || exit 1; test -z "$d" && test "$e" -eq 1'`
+- **AC-003 — чекеры и пакеты фактов не изменены.** Команда: `bash -c 'd=$(git diff --name-only 05e93df4e7424b8a21f0e7f9d1b83b97b1c2f64e..HEAD -- docs/specs/check_articles.py docs/specs/check_m3.py docs/specs/check_m4.py docs/specs/check_m5.py docs/specs/check_m6.py docs/specs/check_m8.py docs/specs/check_m9.py docs/specs/facts-m9.md) || exit 1; e=$(git log --format=%h 05e93df4e7424b8a21f0e7f9d1b83b97b1c2f64e..HEAD -- docs/specs/check_m10.py docs/specs/facts-m10.md | wc -l) || exit 1; test -z "$d" && test "$e" -eq 2'`
 - **AC-004 — изменения только в разрешённых путях.** Команда: `bash -c 'd=$(git diff --name-only 05e93df4e7424b8a21f0e7f9d1b83b97b1c2f64e..HEAD) || exit 1; test -n "$d" || exit 1; bad=$(printf "%s\n" "$d" | grep -vxE "blog/[a-z0-9-]+\.html|sitemap\.xml|llms\.txt|docs/specs/M10-thailand-post-to-russia\.md|docs/specs/check_m10\.py|docs/specs/facts-m10\.md"); echo "outside: $bad"; test -z "$bad"'`
 - **AC-005 — рабочее дерево чистое.** Команда: `bash -c 'test -z "$(git status --porcelain --untracked-files=all -- . ":(exclude)report.json" ":(exclude)report-blocked.md" ":(exclude)docs/specs/__pycache__")"'`
 

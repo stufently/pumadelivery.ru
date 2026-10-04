@@ -7,6 +7,7 @@
 той же вехи» заменено на ссылки на обе статьи M9); сверху — правила M10.
 FAIL <правило>: <файл>: <деталь>, rc=1 если есть хоть одно. Только stdlib.
 """
+import html
 import io
 import os
 import re
@@ -23,13 +24,23 @@ REQUIRED = ["Thailand Post", "EMS", "ePacket", "535", "2 020", "1 580", "22 330"
 M9_SIBLINGS = ["/blog/pochta-rossii-i-ems-v-tailand.html", "/blog/mestnye-sluzhby-dostavki-v-tailande.html"]
 EXTRA_EXT = [
     "https://www.thailandpost.co.th/", "https://file.thailandpost.com/", "https://international.thailandpost.com/",
-    "https://track.thailandpost.co.th/", "https://www.pochta.ru/", "https://global.cdek.ru/",
+    "https://track.thailandpost.co.th/", "https://dpostinter.thailandpost.com/", "https://www.pochta.ru/", "https://global.cdek.ru/",
+    "https://www.dhl.com/", "https://dhlexpress.ee/", "https://www.fedex.com/", "https://www.ups.com/",
 ]
+# строки большой таблицы: вес → EMS World, авиапосылка, ePacket, Small Packet (facts-m10.md §B)
+RATES = {
+    "0,5 кг": ["1 840", "1 580", "535", "460"],
+    "1 кг": ["2 020", "1 580", "1 045", "890"],
+    "2 кг": ["2 420", "2 010", "2 070", "1 770"],
+    "5 кг": ["4 730", "3 600", "—", "—"],
+    "10 кг": ["8 210", "6 600", "—", "—"],
+    "20 кг": ["16 150", "12 600", "—", "—"],
+    "30 кг": ["22 330", "—", "—", "—"],
+}
 FORBID = [
-    r"\d+\s*[–-]\s*\d+\s*(рабочих\s+)?(дн|недел)[^.<]{0,40}(в Россию|до России)",
     r"без\s+ограничени",
     r"cdek-th",
-    r"(DHL|FedEx|UPS)[^.<]{0,60}(принима|доставля|работа)ет",
+    r"(DHL|FedEx|UPS)[^.<]{0,60}(?<!не )(принима|доставля|работа)ет",
 ]
 MIN_WORDS = 1600
 fails = []
@@ -85,6 +96,20 @@ if os.path.isfile(f):
             fail("R10-LINKS", f, f"нет ссылки на {s}")
     if "https://t.me/kolesnikov1988" not in p.hrefs or "пилот" not in vis:
         fail("R10-SELL", f, "нет продажи срочной передачи через пилотов и ссылки на Telegram")
+    rows = {}
+    for t in big:
+        for tr in re.findall(r"<tr>(.*?)</tr>", t.split("<tbody>")[-1], re.S):
+            cells = [ca.norm(html.unescape(re.sub(r"<[^>]+>", "", c))).replace("\u00a0", " ")
+                     for c in re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", tr, re.S)]
+            if cells:
+                rows[cells[0]] = cells[1:]
+    for w, exp in RATES.items():
+        if rows.get(w) != exp:
+            fail("R10-RATES", f, f"строка {w!r}: {rows.get(w)} != {exp}")
+    # срок «N–M дней» допустим только в предложении про Европу
+    for sent in re.split(r"(?<=[.!?])\s+", vis):
+        if re.search(r"\d+\s*[–-]\s*\d+\s*(рабочих\s+)?(дн|недел)", sent) and "Европ" not in sent:
+            fail("R10-FACT", f, f"срок без привязки к Европе: {sent[:90]!r}")
     for rx in FORBID:
         m = re.search(rx, raw)
         if m:
