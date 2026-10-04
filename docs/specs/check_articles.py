@@ -22,6 +22,8 @@ CSS_LINE = ('<link rel="preload" as="style" href="/assets/css/main.min.css" '
             '<link rel="stylesheet" href="/assets/css/main.min.css"></noscript>')
 BUNDLE = '<script defer src="/assets/js/bundle.min.js"></script>'
 CTA = "https://t.me/kolesnikov1988"
+GA_SRC = "https://www.googletagmanager.com/gtag/js?id=G-HHLE9R0EYW"
+YM_ID = 108157978
 CITIES = ["/bangkok.html", "/pattaya.html", "/phuket.html", "/samui.html", "/phangan.html"]
 OLD_ARTICLES = [
     "chto-nelzya-vvozit-v-tailand", "receptury-lekarstva-turistu",
@@ -225,8 +227,10 @@ def main():
                 fail("R-CSS", f, "нет строки подключения CSS в исправленном виде")
             if BUNDLE not in raw:
                 fail("R-BUNDLE", f, "нет bundle.min.js")
-            if [s for s in p.scripts_src if s != "/assets/js/bundle.min.js"]:
+            if [s for s in p.scripts_src if s not in ("/assets/js/bundle.min.js", GA_SRC)]:
                 fail("R-SCRIPTS", f, f"лишние внешние скрипты {p.scripts_src}")
+            if GA_SRC not in p.scripts_src or f'ym({YM_ID}, "init"' not in raw:
+                fail("R-COUNTERS", f, "нет счётчиков GA4 и Яндекс Метрики (скопируй блок из index.html)")
             if p.h1 != 1:
                 fail("R-H1", f, f"h1 = {p.h1}")
             if p.h2 < MIN_H2:
@@ -315,11 +319,13 @@ def main():
                     fail("R-LINK-EXTERNAL", f, f"внешняя ссылка вне списка: {h}")
             for img in p.imgs:
                 src = img.get("src", "")
+                if src == f"https://mc.yandex.ru/watch/{YM_ID}":
+                    continue  # пиксель Метрики в <noscript>
                 if not (img.get("alt") and img.get("width") and img.get("height") and img.get("loading") == "lazy"):
                     fail("R-IMG", f, f"img без alt/width/height/lazy: {src}")
                 if not os.path.isfile(os.path.join(root, src.lstrip("/"))):
                     fail("R-IMG", f, f"нет файла {src}")
-            if not p.imgs:
+            if not [i for i in p.imgs if i.get("src", "") != f"https://mc.yandex.ru/watch/{YM_ID}"]:
                 fail("R-IMG", f, "нет картинки")
 
             # содержание
