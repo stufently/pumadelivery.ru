@@ -1,0 +1,4 @@
+# M11: checker dependencies and local screenshots (not part of the site)
+docs/specs/layout/node_modules/
+/tmp/
+__pycache__/

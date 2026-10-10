@@ -1,0 +1,10 @@
+{
+  "name": "pumadelivery-layout-checks",
+  "private": true,
+  "type": "module",
+  "description": "Playwright/Lighthouse checks for the pumadelivery.ru theme (docs/specs/M11-theme-redesign.md)",
+  "dependencies": {
+    "lighthouse": "13.5.0",
+    "playwright": "1.64.0"
+  }
+}
