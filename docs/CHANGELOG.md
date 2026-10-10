@@ -1,5 +1,14 @@
 # CHANGELOG pumadelivery.ru
 
+## 2026-10-10
+
+### Изменено
+- Новая собственная тема с нуля (M11, `docs/specs/M11-*`, `check_theme.py`, `docs/specs/layout/*`): mobile-first CSS ~10 КБ без `@import`/Google Fonts, ванильный JS <1 КБ вместо jQuery-бандла, без прелоадера и `#wrapper`. Hero помещается в первый экран 360–1440 px с кнопкой «Написать в Telegram»; уменьшенные картинки в `images/theme/` (≤60 % высоты экрана); плавающая кнопка Telegram прячется, пока видна кнопка hero, и не перекрывает подвал. Удалены `assets/sass/`, `assets/webfonts/`, Font Awesome и старые JS. Head-SEO, JSON-LD, счётчики и текст всех 38 страниц сохранены.
+- Lighthouse mobile (локально, медиана 3): главная 73→100, Бангкок 79→100, блог 84→100, статья 81→100; a11y 92–93→100.
+
+### Добавлено
+- Страницы услуг из секций главной: `uslugi/poisk-postavshchikov-v-tailande.html`, `uslugi/porucheniya-i-zakupki-v-tailande.html`, `uslugi/postoplata-i-garant.html` (текст дословно, свои title/description, JSON-LD Service + BreadcrumbList); на главной вместо секций — карточки со ссылками; `sitemap.xml`, `llms.txt`.
+
 ## 2026-10-04
 
 ### Добавлено
