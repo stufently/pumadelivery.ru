@@ -33,7 +33,7 @@ COUNTER_MARKS = [
     'ym(108157978, "init"',
     'https://mc.yandex.ru/watch/108157978',
 ]
-HOME_CONTACTS = [TG, "https://t.me/stufently", "https://vk.com/pumainthailand",
+HOME_CONTACTS = [TG, "https://vk.com/id167146956",
                  "mailto:pumainthailand.com@gmail.com"]
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))

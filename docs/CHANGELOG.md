@@ -1,5 +1,10 @@
 # CHANGELOG pumadelivery.ru
 
+## 2026-11-23
+
+### Изменено
+- Ссылка ВК `vk.com/pumainthailand` → `vk.com/id167146956` на всех страницах, в JSON-LD sameAs и llms.txt; из подвала, текста главной и sameAs Organization убран Telegram @stufently (контакт — @kolesnikov1988). Чекеры `docs/specs/check_*.py` обновлены; `check_theme.py` против базы M11 теперь законно показывает R-TEXT/R-HEAD по контактам.
+
 ## 2026-10-10
 
 ### Изменено

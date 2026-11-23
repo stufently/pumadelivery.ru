@@ -32,8 +32,8 @@ OLD_ARTICLES = [
     "tajskaya-bankovskaya-karta-2026",
 ]
 EXT_ALLOWED_PREFIXES = [
-    "https://t.me/kolesnikov1988", "https://t.me/stufently",
-    "https://vk.com/pumainthailand", "mailto:pumainthailand.com@gmail.com",
+    "https://t.me/kolesnikov1988",
+    "https://vk.com/id167146956", "mailto:pumainthailand.com@gmail.com",
     "https://customs.gov.ru/", "https://en.fda.moph.go.th/",
     "https://info.pochta.ru/", "https://eec.eaeunion.org/",
     "https://www.customs.go.th/", "https://www.iata.org/",
